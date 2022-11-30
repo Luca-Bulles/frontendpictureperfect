@@ -47,6 +47,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./frontendpictureperfect/Dockerfile
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/frontendpictureperfect:latest
