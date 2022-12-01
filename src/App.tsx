@@ -5,11 +5,9 @@ import KeyCloakService from './security/KeycloakService';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Postcontent from './pages/Postcontent';
-import { readConfigFile } from 'typescript';
 
 export default function App() {
   function logout() {
