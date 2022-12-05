@@ -12,7 +12,6 @@ const Postcontent = () => {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
         const result = await axios.post("https://localhost:5003/ocelot/content", data, config);
-        //const result = await axios.post("https://localhost:7213/api/content", data);
         console.log(result.data)
     };
 
