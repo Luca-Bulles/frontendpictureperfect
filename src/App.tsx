@@ -1,13 +1,10 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import KeyCloakService from './security/KeycloakService';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  useNavigate,
-  Navigate
+  Route
 } from "react-router-dom";
 import Postcontent from './pages/Postcontent';
 
