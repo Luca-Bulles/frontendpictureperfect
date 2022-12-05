@@ -1,9 +1,22 @@
+import axios from "axios";
+
 const Postcontent = () => {
+
+    const postHandler = async (e: any) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        const result = await axios.post("https://localhost:5003/ocelot/content", data);
+        //const result = await axios.post("https://localhost:7213/api/content", data);
+        console.log(result.data)
+    }
+
+
     return (
         <div>
             <br></br>
             <h1>Add content here below: </h1>
-            <form>
+            <form onSubmit={postHandler}>
                 <label>
                     Category:
                     <br></br>
@@ -43,7 +56,7 @@ const Postcontent = () => {
                 <label>
                     Year:
                     <br></br>
-                    <input type="text" name="year" />
+                    <input type="number" name="year" />
                 </label>
                 <br></br>
                 <input type="submit" value="submit" />
