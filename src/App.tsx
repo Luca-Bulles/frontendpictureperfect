@@ -5,7 +5,9 @@ import KeyCloakService from './security/KeycloakService';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  useNavigate,
+  Navigate
 } from "react-router-dom";
 import Postcontent from './pages/Postcontent';
 
@@ -13,6 +15,8 @@ export default function App() {
   function logout() {
     KeyCloakService.CallLogout();
   };
+
+
 
   return (
     <div className="App">
@@ -23,7 +27,6 @@ export default function App() {
         <button onClick={logout}>Log Out</button>
         <Router>
           <Routes>
-
             <Route path="/post" element={<Postcontent />} />
 
           </Routes>
