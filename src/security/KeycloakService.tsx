@@ -28,11 +28,14 @@ const UserRoles = () => {
 
 const Logout = keycloakInstance.logout;
 
+const getToken = () => keycloakInstance.token;
+
 const KeyCloakService = {
     CallLogin: Login,
     GetUserName: UserName,
     GetUserRoles: UserRoles,
     CallLogout: Logout,
+    GetToken: getToken,
 };
 
 export default KeyCloakService;

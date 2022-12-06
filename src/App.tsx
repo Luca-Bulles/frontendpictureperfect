@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import KeyCloakService from './security/KeycloakService';
@@ -14,6 +13,7 @@ export default function App() {
     KeyCloakService.CallLogout();
   };
 
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,7 +23,6 @@ export default function App() {
         <button onClick={logout}>Log Out</button>
         <Router>
           <Routes>
-
             <Route path="/post" element={<Postcontent />} />
 
           </Routes>
