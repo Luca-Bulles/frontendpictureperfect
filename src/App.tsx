@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Postcontent from './pages/Postcontent';
 import Deletecontent from './pages/Deletecontent';
+import Updatecontent from './pages/Updatecontent';
 
 export default function App() {
   function logout() {
@@ -32,6 +33,13 @@ export default function App() {
         <Router>
           <Routes>
             <Route path="/delete" element={<Deletecontent />} />
+          </Routes>
+
+        </Router>
+
+        <Router>
+          <Routes>
+            <Route path="/update" element={<Updatecontent />} />
           </Routes>
 
         </Router>
