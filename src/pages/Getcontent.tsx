@@ -1,11 +1,11 @@
-import axios from "axios";
-import KeyCloakService from "../security/KeycloakService";
+//import axios from "axios";
+//import KeyCloakService from "../security/KeycloakService";
 
 const Getcontent = () => {
 
-    const config = {
-        headers: { Authorization: `Bearer ${KeyCloakService.GetToken()}` }
-    };
+    // const config = {
+    //     headers: { Authorization: `Bearer ${KeyCloakService.GetToken()}` }
+    // };
 
     // const getHandler = async (e: any) => {
     //     e.preventDefault();
