@@ -11,8 +11,11 @@ const Postcontent = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
+        const resultGet = await axios.get("https://localhost:5003/ocelot/content", config);
+        console.log(resultGet);
         const result = await axios.post("https://localhost:5003/ocelot/content", data, config);
         console.log(result.data)
+
     };
 
     return (

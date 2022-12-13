@@ -7,6 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import Postcontent from './pages/Postcontent';
+import Deletecontent from './pages/Deletecontent';
 
 export default function App() {
   function logout() {
@@ -24,7 +25,13 @@ export default function App() {
         <Router>
           <Routes>
             <Route path="/post" element={<Postcontent />} />
+          </Routes>
 
+        </Router>
+
+        <Router>
+          <Routes>
+            <Route path="/delete" element={<Deletecontent />} />
           </Routes>
 
         </Router>
