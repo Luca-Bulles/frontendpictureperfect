@@ -9,6 +9,7 @@ import {
 import Postcontent from './pages/Postcontent';
 import Deletecontent from './pages/Deletecontent';
 import Updatecontent from './pages/Updatecontent';
+import Getcontent from './pages/Getcontent';
 
 export default function App() {
   function logout() {
@@ -23,6 +24,11 @@ export default function App() {
         <p>Welcome {KeyCloakService.GetUserName()}</p>
         <p>Roles: {KeyCloakService.GetUserRoles()?.join(" ")}</p>
         <button onClick={logout}>Log Out</button>
+        <ul>Available endpoints:</ul>
+        <li>/post</li>
+        <li>/update</li>
+        <li>/delete</li>
+        <li>/get</li>
         <Router>
           <Routes>
             <Route path="/post" element={<Postcontent />} />
@@ -40,6 +46,13 @@ export default function App() {
         <Router>
           <Routes>
             <Route path="/update" element={<Updatecontent />} />
+          </Routes>
+
+        </Router>
+
+        <Router>
+          <Routes>
+            <Route path="/get" element={<Getcontent />} />
           </Routes>
 
         </Router>
