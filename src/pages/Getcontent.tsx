@@ -7,13 +7,13 @@ const Getcontent = () => {
         headers: { Authorization: `Bearer ${KeyCloakService.GetToken()}` }
     };
 
-    const getHandler = async (e: any) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
-        const resultGet = await axios.get("https://localhost:5003/ocelot/content", config);
-        console.log("Axios.Get: ", resultGet);
-    };
+    // const getHandler = async (e: any) => {
+    //     e.preventDefault();
+    //     const formData = new FormData(e.target);
+    //     const data = Object.fromEntries(formData);
+    //     const resultGet = await axios.get("https://localhost:5003/ocelot/content", config);
+    //     console.log("Axios.Get: ", resultGet);
+    // };
 
     return (
         <div>
