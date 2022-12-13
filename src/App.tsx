@@ -23,6 +23,10 @@ export default function App() {
         <p>Welcome {KeyCloakService.GetUserName()}</p>
         <p>Roles: {KeyCloakService.GetUserRoles()?.join(" ")}</p>
         <button onClick={logout}>Log Out</button>
+        <ul>Available endpoints:</ul>
+        <li>/post</li>
+        <li>/update</li>
+        <li>/delete</li>
         <Router>
           <Routes>
             <Route path="/post" element={<Postcontent />} />
