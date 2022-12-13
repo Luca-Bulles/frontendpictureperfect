@@ -1,19 +1,17 @@
 import axios from "axios";
 import KeyCloakService from "../security/KeycloakService";
 
-const Postcontent = () => {
+const Updatecontent = () => {
 
     const config = {
         headers: { Authorization: `Bearer ${KeyCloakService.GetToken()}` }
     };
 
-    const postHandler = async (e: any) => {
+    const updateHandler = async (e: any) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        const resultGet = await axios.get("https://localhost:5003/ocelot/content", config);
-        console.log(resultGet);
-        const result = await axios.post("https://localhost:5003/ocelot/content", data, config);
+        const result = await axios.put("https://localhost:5003/ocelot/content", data, config);
         console.log(result.data)
 
     };
@@ -21,8 +19,14 @@ const Postcontent = () => {
     return (
         <div>
             <br></br>
-            <h1>Add content here below: </h1>
-            <form onSubmit={postHandler}>
+            <h1>Update existing content here below: </h1>
+            <form onSubmit={updateHandler}>
+                <label>
+                    Id:
+                    <br></br>
+                    <input type="number" name="contentId" />
+                </label>
+                <br></br>
                 <label>
                     Category:
                     <br></br>
@@ -74,4 +78,4 @@ const Postcontent = () => {
 
 
 
-export default Postcontent;
+export default Updatecontent;
