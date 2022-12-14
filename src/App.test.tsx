@@ -51,3 +51,12 @@ test('renders Homepage', () => {
   const linkElement = screen.getByText(/Welcome/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+
+test('Check token from Keycloak', () => {
+  const config = {
+    headers: { Authorization: `Bearer ${KeyCloakService.GetToken()}` }
+  };
+
+  expect(config).toEqual({ headers: { Authorization: `Bearer ${KeyCloakService.GetToken()}` } })
+})
