@@ -1,4 +1,6 @@
 import axios from "axios";
+import { render, screen } from '@testing-library/react';
+import App from './App';
 import KeyCloakService from "./security/KeycloakService";
 
 test("Render Homepage", () => {
@@ -43,3 +45,9 @@ test("Test Post", async () => {
   const respondStatus2 = test2.status
   expect(respondStatus2).toEqual(200)
 })
+
+test('renders Homepage', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Welcome/i);
+  expect(linkElement).toBeInTheDocument();
+});
